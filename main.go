@@ -1,12 +1,11 @@
 package main
 
-import(
+import (
 	"fmt"
 	"os"
 
 	"./geojson"
 )
-
 
 func main() {
 

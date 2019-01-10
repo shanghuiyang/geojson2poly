@@ -1,9 +1,9 @@
 package geojson
 
-import(
-	"fmt"
-	"errors"
+import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"io/ioutil"
 )
 
@@ -22,7 +22,7 @@ type Geometry struct {
 
 // Properties ...
 type Properties struct {
-	Name        string `json:"name"`
+	Name string `json:"name"`
 }
 
 // BBOX ...
@@ -75,7 +75,7 @@ func (g *Geojson) ToPoly(filePath string) error {
 		s += "END\n"
 	}
 	s += "END\n"
-	
+
 	err := ioutil.WriteFile(filePath, []byte(s), 0644)
 	if err != nil {
 		return err
