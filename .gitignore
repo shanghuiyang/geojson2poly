@@ -4,6 +4,8 @@
 *.dll
 *.so
 *.dylib
+main
+geojson2poly
 
 # Test binary, build with `go test -c`
 *.test
