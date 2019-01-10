@@ -1,21 +1,21 @@
 # geojson2poly
-Convert geojson file to poly file
+Converts geojson polygons to openstreetmap(osm) poly format file.
 
-#### What is geojson?
+## What is geojson?
 http://geojson.org/
 
 
-#### What is poly
+## What is osm poly format file
 https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format
 
 
-#### Build
-```shell
+## Build
+```
 $ go build -o geojson2poly main.go
 ```
 
 
-#### Usage
-```shell
+## Usage
+```
 $ geojson2poly -i infile.json -o outfile.poly
 ```
