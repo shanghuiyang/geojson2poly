@@ -25,11 +25,6 @@ type Properties struct {
 	Name string `json:"name"`
 }
 
-// BBOX ...
-type BBOX struct {
-	Left, Right, Top, Bottom float64
-}
-
 // NewGeojson ...
 func NewGeojson() *Geojson {
 	return &Geojson{}
