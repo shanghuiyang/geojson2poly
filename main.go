@@ -10,7 +10,7 @@ import (
 func main() {
 
 	if len(os.Args) != 5 {
-		fmt.Println("error: invail args")
+		fmt.Println("error: invalid args")
 		fmt.Println("usage: geojson2poly -i infile.json -o outfile.poly")
 		return
 	}
@@ -33,12 +33,14 @@ func main() {
 	if err != nil {
 		fmt.Printf("error: fail to load geojson from: %v\n", infile)
 		fmt.Printf("err msg: %v\n", err)
+		return
 	}
 
 	err = g.ToPoly(outfile)
 	if err != nil {
 		fmt.Printf("error: fail to save poly file: %v\n", outfile)
 		fmt.Printf("err msg: %v\n", err)
+		return
 	}
 
 	fmt.Println("done in success")
