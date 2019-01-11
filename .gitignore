@@ -12,3 +12,9 @@ geojson2poly
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+# zip files
+*.zip
+
+# others
+.DS_Store
