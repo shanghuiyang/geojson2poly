@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"./geojson"
+	"github.com/shanghuiyang/geojson2poly/geojson"
 )
 
 func main() {
