@@ -8,12 +8,15 @@ http://geojson.org/
 ## What is osm poly format file
 https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format
 
+## Install
+```shell
+$ go get github.com/shanghuiyang/geojson2poly
+```
 
 ## Build
 ```shell
 $ go build -o geojson2poly main.go
 ```
-
 
 ## Usage
 ```shell
