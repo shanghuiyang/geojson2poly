@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-
 	if len(os.Args) != 5 {
 		fmt.Println("error: invalid args")
 		fmt.Println("usage: geojson2poly -i infile.json -o outfile.poly")
