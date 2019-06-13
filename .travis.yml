@@ -3,3 +3,6 @@ language: go
 go:
   - 1.10.x
   - master
+
+  notifications:
+    slack: grab:OVbEkJH3R10nkyKfwT996cB5
