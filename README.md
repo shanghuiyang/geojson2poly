@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shanghuiyang/geojson2poly.svg?branch=master)](https://travis-ci.org/shanghuiyang/geojson2poly)
+
 # geojson2poly
 Converts geojson polygons to openstreetmap(osm) poly format file.
 
