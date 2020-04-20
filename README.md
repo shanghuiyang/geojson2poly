@@ -23,5 +23,5 @@ $ go build -o geojson2poly main.go
 
 ## Usage
 ```shell
-$ geojson2poly -i infile.json -o outfile.poly
+$ geojson2poly -i input.geojson -o output.poly
 ```

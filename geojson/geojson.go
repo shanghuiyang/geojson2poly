@@ -2,7 +2,6 @@ package geojson
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 )
@@ -32,16 +31,12 @@ func NewGeojson() *Geojson {
 
 // Load ...
 func (g *Geojson) Load(filePath string) error {
-	if g == nil {
-		return errors.New("geojson object is nil")
-	}
 	bytes, err := ioutil.ReadFile(filePath)
 	if err != nil {
 		return err
 	}
 
-	err = json.Unmarshal(bytes, g)
-	if err != nil {
+	if err := json.Unmarshal(bytes, g); err != nil {
 		return err
 	}
 
@@ -50,10 +45,6 @@ func (g *Geojson) Load(filePath string) error {
 
 // ToPoly ...
 func (g *Geojson) ToPoly(filePath string) error {
-	if g == nil {
-		return errors.New("geojson object is nil")
-	}
-
 	s := g.Properties.Name
 	if s == "" {
 		s = "No Name"
@@ -71,9 +62,9 @@ func (g *Geojson) ToPoly(filePath string) error {
 	}
 	s += "END\n"
 
-	err := ioutil.WriteFile(filePath, []byte(s), 0644)
-	if err != nil {
+	if err := ioutil.WriteFile(filePath, []byte(s), 0644); err != nil {
 		return err
 	}
+
 	return nil
 }
