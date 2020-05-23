@@ -12,14 +12,14 @@ http://geojson.org/
 https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format
 
 ## Install
+build and install from source codes,
 ```shell
-$ go get github.com/shanghuiyang/geojson2poly
+$ go get -u github.com/shanghuiyang/geojson2poly
+$ cd $GOPATH/src/github.com/shanghuiyang/geojson2poly
+$ go install
 ```
 
-## Build
-```shell
-$ go build -o geojson2poly main.go
-```
+or download the binary from [here](https://github.com/shanghuiyang/geojson2poly/releases)
 
 ## Usage
 ```shell
