@@ -19,3 +19,4 @@ geojson2poly
 # others
 .DS_Store
 mybuild.sh
+*.poly

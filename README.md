@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/shanghuiyang/geojson2poly.svg?branch=master)](https://travis-ci.org/shanghuiyang/geojson2poly)
+[![Build Status](https://app.travis-ci.com/shanghuiyang/geojson2poly.svg?branch=master)](https://app.travis-ci.com/shanghuiyang/geojson2poly)
 
 
 # geojson2poly
