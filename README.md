@@ -2,26 +2,32 @@
 
 
 # geojson2poly
-Converts geojson polygons to openstreetmap(osm) poly format file.
-
-## What is geojson?
-http://geojson.org/
-
-
-## What is osm poly format file
-https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format
-
-## Install
-build and install from source codes,
-```shell
-$ go get -u github.com/shanghuiyang/geojson2poly
-$ cd $GOPATH/src/github.com/shanghuiyang/geojson2poly
-$ go install
-```
-
-or download the binary from [here](https://github.com/shanghuiyang/geojson2poly/releases)
+Converts [geojson](http://geojson.org/) Polygon/MultiPolygon to openstreetmap(osm) [poly](https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format) format file.
 
 ## Usage
-```shell
-$ geojson2poly -i input.geojson -o output.poly
 ```
+usage: geojson2poly --input=GEOJSON --output=POLY [<flags>]
+
+Flags:
+  -h, --help           Show context-sensitive help (also try --help-long and --help-man).
+  -i, --input=GEOJSON  a .geojson file as input
+  -o, --output=POLY    a .poly file as output
+```
+
+example,
+```shell
+$ geojson2poly -i test.geojson -o test.poly
+```
+
+## Install
+**Build from sourcecodes**
+```shell
+$ go get -u github.com/shanghuiyang/geojson2poly
+# from project directory
+$ go build .
+$ cp cp geojson2poly /usr/local/bin
+# test
+$ geojson2poly -h
+```
+**Download from the per-compiled binary**
+Download from [Release](https://github.com/shanghuiyang/geojson2poly/releases)
