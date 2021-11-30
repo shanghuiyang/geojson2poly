@@ -35,14 +35,10 @@ func main() {
 
 	}
 
+	// assume the rawJSON is a geojson Feature
 	f, err := geojson.UnmarshalFeature(rawJSON)
 	if err != nil {
 		fmt.Printf("ERROR! %v\n", err)
-		os.Exit(1)
-	}
-
-	if f.Type != "Feature" {
-		fmt.Println("ERROR! unsupported geojson")
 		os.Exit(1)
 	}
 
@@ -52,6 +48,33 @@ func main() {
 	}
 	result += "\n"
 
+	switch f.Type {
+	case "Feature":
+		result += fromFeature(f)
+	case "FeatureCollection":
+		// try to treat rawJSON as FeatureCollection since it isn't a Feature.
+		fc, err := geojson.UnmarshalFeatureCollection(rawJSON)
+		if err != nil {
+			fmt.Printf("ERROR! %v\n", err)
+			os.Exit(1)
+		}
+		result += fromFeatureCollection(fc)
+	default:
+		fmt.Println("ERROR! unsupported feature type")
+		os.Exit(1)
+	}
+	result += "END\n"
+
+	if err := ioutil.WriteFile(output, []byte(result), 0644); err != nil {
+		fmt.Printf("ERROR! %v\n", err)
+		os.Exit(1)
+	}
+	fmt.Println("success")
+	os.Exit(0)
+}
+
+func fromFeature(f *geojson.Feature) string {
+	result := ""
 	switch f.Geometry.Type {
 	case geojson.GeometryPolygon:
 		result += "1\n"
@@ -63,14 +86,19 @@ func main() {
 			result += toPoly(p)
 			result += "END\n"
 		}
+	default:
+		return ""
 	}
-	result += "END\n"
-	if err := ioutil.WriteFile(output, []byte(result), 0644); err != nil {
-		fmt.Printf("ERROR! %v\n", err)
-		os.Exit(1)
+
+	return result
+}
+
+func fromFeatureCollection(fc *geojson.FeatureCollection) string {
+	result := ""
+	for _, f := range fc.Features {
+		result += fromFeature(f)
 	}
-	fmt.Println("success")
-	os.Exit(0)
+	return result
 }
 
 func toPoly(polygon [][][]float64) string {
