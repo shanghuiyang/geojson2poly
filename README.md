@@ -1,7 +1,7 @@
-[![Build Status](https://app.travis-ci.com/shanghuiyang/geojson2poly.svg?branch=master)](https://app.travis-ci.com/shanghuiyang/geojson2poly)
-
-
 # geojson2poly
+
+![example workflow](https://github.com/shanghuiyang/geojson2poly/actions/workflows/ci.yml/badge.svg)
+
 Converts [geojson](http://geojson.org/) Polygon/MultiPolygon to openstreetmap(osm) [poly](https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format) format file.
 
 ## Usage
