@@ -1,5 +1,5 @@
 # geojson2poly
-[![Build status](https://github.com/shanghuiyang/geojson2poly/workflows/CI/badge.svg)](https://github.com/shanghuiyang/geojson2poly/actions)
+[![CI](https://github.com/shanghuiyang/geojson2poly/actions/workflows/ci.yml/badge.svg)](https://github.com/shanghuiyang/geojson2poly/actions/workflows/ci.yml)
 
 Converts [geojson](http://geojson.org/) Polygon/MultiPolygon to openstreetmap(osm) [poly](https://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format) format file.
 
